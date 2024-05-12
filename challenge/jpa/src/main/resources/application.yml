@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(ICj95aRhKSeWpTUe3JBp+dHqUt7XU8z1S6fRgHeFsRhMyzALnoMHrxPTd1k3J8thn2EHcuGP/6MbFuHsGkJv3cbx/HjpXoHWoSGk8Ga87F8Z2kvHlJ9pCJd8J2wi9hxu)
+    username: ENC(wD4WtXb2cYZYnmCg/71BNQ==)
+    password: ENC(Q7qtOXRekeXjEcUhAIy8wA==)
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+
+
+
+# jasypt
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
