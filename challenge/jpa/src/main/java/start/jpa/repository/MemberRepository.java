@@ -19,4 +19,11 @@ public class MemberRepository {
     public Member find(Long id){
         return em.find(Member.class, id);
     }
+
+    public void delete(Long id) {
+        Member member = em.find(Member.class, id);
+        if (member != null) {
+            em.remove(member);
+        }
+    }
 }
