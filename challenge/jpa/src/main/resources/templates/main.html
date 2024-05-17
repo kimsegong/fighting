@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{layout/header::head('')}"></head>
+<head th:replace="~{piece/header::head('')}"></head>
 <style>
 </style>
 <body>
 
-<div th:replace="~{layout/header::header}"></div>
+<div th:replace="~{piece/header::header}"></div>
 
-<div>안녕</div>
+    <h2>회원기능</h2>
+    <p>
+        <a href="/members/check">회원조회</a>
+        <a href="/members/register">회원등록</a>
+    </p>
 
 
 <script th:inline="javascript">
@@ -19,6 +23,6 @@
 
 
 
-<div th:replace="~{layout/footer::footer}"></div>
+<div th:replace="~{piece/footer::footer}"></div>
 </body>
 </html>

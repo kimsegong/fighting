@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{piece/header::head('')}"></head>
+<style>
+</style>
+<body>
+
+<div th:replace="~{piece/header::header}"></div>
+
+<h2>회원조회</h2>
+<div>
+    <table>
+        <thead>
+          <tr>
+           <th>아이디</th>
+           <th>이름</th>
+           <th>나이</th>
+          </tr>
+        </thead>
+        <tbody>
+           <tr th:each="member : ${members}">
+              <td th:text="${member.id}"></td>
+              <td th:text="${member.name}"></td>
+              <td th:text="${member.age}"></td>
+           </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script th:inline="javascript">
+
+</script>
+
+
+
+
+
+
+<div th:replace="~{piece/footer::footer}"></div>
+</body>
+</html>
