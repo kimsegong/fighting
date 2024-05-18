@@ -26,6 +26,7 @@ public class MemberController {
         return "members/check";
     }
 
+    // 회원 등록
     @GetMapping(value ="/register")
     public String registerForm(){
         return "members/register";

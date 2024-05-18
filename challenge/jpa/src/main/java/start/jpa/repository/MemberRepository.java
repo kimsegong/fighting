@@ -26,4 +26,15 @@ public class MemberRepository {
         return em.createQuery("select m from Member m", Member.class).getResultList();
     }
 
+    public void update(Member member) {
+        em.merge(member);
+    }
+
+    // 삭제 메소드
+    public void delete(Long id) {
+        Member member = em.find(Member.class, id);
+        if (member != null) {
+            em.remove(member);
+        }
+
 }

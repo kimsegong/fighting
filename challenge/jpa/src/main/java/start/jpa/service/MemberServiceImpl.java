@@ -14,11 +14,13 @@ public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
+    // 회원 조회
     @Override
     public List<Member> findMember() {
         return memberRepository.findAll();
     }
 
+    // 회원 등록
     @Transactional
     @Override
     public Long saveMember(Member member) {
