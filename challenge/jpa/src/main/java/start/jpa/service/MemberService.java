@@ -8,4 +8,5 @@ import java.util.List;
 public interface MemberService {
     public List<Member> findMember();
     public Long saveMember(Member member);
+    public void deleteMember(Long id);
 }
