@@ -2,12 +2,14 @@ package start.jpa.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Builder
 @Entity
 @Table(name = "member")
 public class Member {
@@ -20,6 +22,6 @@ public class Member {
     @Column(name = "MEMBER_AGE")
     private int age;
     @Column(name = "MEMBER_PW")
-    private int pw;
+    private String pw;
 
 }

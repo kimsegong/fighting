@@ -9,9 +9,23 @@
 
     <h2>회원기능</h2>
     <p>
-        <a href="/members/check">회원조회</a>
-        <a href="/members/register">회원등록</a>
+        <a th:href="@{/members/check}">회원조회</a>
+        <a th:href="@{/members/register}">회원등록</a>
     </p>
+    <th:block th:if="${session.member != null}">
+       <p>로그인됨</p>
+       <a th:href="@{members/modifyMember(id=${session.member.id})}">회원수정</a>
+       <a th:href="@{/logout}">로그아웃</a>
+    </th:block>
+    <th:block th:if="${session.member == null}">
+    <form method="post" th:action="@{/login}">
+            <label for="name"></label>
+            <div><input type="text" name="name" id="name" placeholder="이름" class="form-control"></div>
+            <label for="pw"></label>
+            <div><input type="password" name="pw" id="pw" placeholder="비밀번호" class="form-control"></div>
+        <button type="submit">로그인</button>
+    </form>
+    </th:block>
 
 
 <script th:inline="javascript">

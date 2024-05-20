@@ -1,15 +1,19 @@
 package start.jpa.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import start.jpa.entity.Member;
+import start.jpa.repository.MemberRepository;
 import start.jpa.service.MemberServiceImpl;
 
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 
 @RequiredArgsConstructor
 @RequestMapping("/members")
@@ -17,6 +21,7 @@ import java.util.List;
 public class MemberController {
 
     private final MemberServiceImpl memberService;
+    private final MemberRepository memberRepository;
 
     // 회원조회
     @GetMapping(value ="/check")
@@ -37,4 +42,24 @@ public class MemberController {
         memberService.saveMember(member);
         return "main";
     }
+
+    // 회원 수정
+    @GetMapping(value ="/modifyMember")
+    public String modifyMemberForm(Model model, Long id){
+        List<Member> members = memberRepository.findById(id);
+        if (!members.isEmpty()) {
+            model.addAttribute("member", members.get(0));
+        } else {
+            throw new NoSuchElementException("Member not found with id: " + id);
+        }
+        return "members/modifyMember";
+    }
+
+
+    @PostMapping(value ="/modifyMember")
+    public void modifyMember(HttpServletRequest request){
+        memberService.modifyMember(request);
+    }
+
+    // 회원 삭제
 }

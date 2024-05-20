@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{piece/header::head('')}"></head>
+<style>
+</style>
+<body>
+
+<div th:replace="~{piece/header::header}"></div>
+
+   <h2>회원정보수정</h2>
+   <form method="post" th:action="@{/members/modifyMember}">
+         <label for="name">이름</label>
+         <input type="text" th:value="${session.member.name}" name="name" id="name" class="form-control">
+
+         <label for="age">나이</label>
+         <input type="number" th:value="${session.member.age}" name="age" id="age" class="form-control">
+
+         <label for="pw">비밀번호</label>
+         <input type="password" th:value="${session.member.pw}" name="pw" id="pw" class="form-control">
+
+         <input type="hidden" th:value="${session.member.id}" name="id" id="id">
+         <button type="submit">정보수정하기</button>
+   </form>
+
+
+
+
+<script th:inline="javascript">
+
+</script>
+
+
+
+
+
+
+<div th:replace="~{piece/footer::footer}"></div>
+</body>
+</html>
