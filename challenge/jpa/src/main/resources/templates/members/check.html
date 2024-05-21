@@ -15,6 +15,7 @@
            <th>아이디</th>
            <th>이름</th>
            <th>나이</th>
+           <th>버튼</th>
           </tr>
         </thead>
         <tbody>
@@ -22,6 +23,11 @@
               <td th:text="${member.id}"></td>
               <td th:text="${member.name}"></td>
               <td th:text="${member.age}"></td>
+              <td>
+                 <form th:action="@{/members/deleteMember(id=${member.id})}" method="post">
+                    <button type="submit">삭제</button>
+                 </form>
+              </td>
            </tr>
         </tbody>
     </table>

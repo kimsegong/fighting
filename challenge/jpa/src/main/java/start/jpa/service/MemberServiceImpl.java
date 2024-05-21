@@ -64,6 +64,7 @@ public class MemberServiceImpl implements MemberService {
 
     }
 
+    // 회원 수정
     @Transactional
     @Override
     public void modifyMember(HttpServletRequest request) {
@@ -93,7 +94,8 @@ public class MemberServiceImpl implements MemberService {
 
     }
 
-
+    // 회원 삭제
+    @Transactional
     @Override
     public void deleteMember(Long id) {
       memberRepository.delete(id);

@@ -43,7 +43,7 @@ public class MemberController {
         return "main";
     }
 
-    // 회원 수정
+    // 회원 수정(페이지로 이동)
     @GetMapping(value ="/modifyMember")
     public String modifyMemberForm(Model model, Long id){
         List<Member> members = memberRepository.findById(id);
@@ -55,11 +55,16 @@ public class MemberController {
         return "members/modifyMember";
     }
 
-
+    // 회원 수정
     @PostMapping(value ="/modifyMember")
     public void modifyMember(HttpServletRequest request){
         memberService.modifyMember(request);
     }
 
     // 회원 삭제
+    @PostMapping(value ="/deleteMember")
+    public String deleteMember(Long id){
+        memberService.deleteMember(id);
+        return "redirect:/members/check";
+    }
 }
