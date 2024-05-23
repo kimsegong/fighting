@@ -23,5 +23,7 @@ public class Item {
     private int amount;
     @Column(name = "ITAM_PRICE")
     private int price;
+    @Column(name = "ITAM_STATUS")
+    private int status; // 상품상태
 
 }
