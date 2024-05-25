@@ -20,4 +20,9 @@ public class ItemRepository {
         em.persist(item);
     }
 
+    // 상품전체조회
+    public List<Item> itemFindAll() {
+        return em.createQuery("select m from Item m", Item.class).getResultList();
+    }
+
 }
