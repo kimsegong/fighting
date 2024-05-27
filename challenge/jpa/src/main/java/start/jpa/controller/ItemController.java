@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import start.jpa.entity.Item;
 import start.jpa.entity.Member;
 import start.jpa.service.ItemServiceImpl;
 import start.jpa.service.MemberServiceImpl;
@@ -23,5 +24,16 @@ public class ItemController {
     public String item(){
         return "item/save";
     }
+
+    @GetMapping("/itemList")
+    public String selectAllItem(){
+        itemService.selectItem();
+        return "item/itemList";
+    }
+
+//    @PostMapping("/modifyItem")
+//    public Item itemModify(){
+//        int modifyResult = itemService.
+//    }
 
 }

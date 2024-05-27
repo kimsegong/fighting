@@ -8,5 +8,5 @@ import start.jpa.entity.Member;
 import java.util.List;
 
 public interface ItemService {
-
+  public void selectItem();
 }
