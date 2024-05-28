@@ -39,4 +39,9 @@ public class ItemRepository {
         return modifyResult == 1;
     }
 
+    // 상품삭제
+    public void deleteItem(Item item){
+
+    }
+
 }
