@@ -1,29 +1,23 @@
 package start.jpa.service;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import start.jpa.entity.Member;
-import start.jpa.repository.ItemRepository;
-import start.jpa.repository.MemberRepository;
+import start.jpa.entity.Item;
+import start.jpa.repository.ItemCustomerRepository;
+import start.jpa.repository.ItemRepository1;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor
 public class ItemServiceImpl implements ItemService {
 
-    private final ItemRepository itemRepository;
+  private final ItemCustomerRepository itemCustomerRepository;
 
     @Override
-    public void selectItem(){
-        itemRepository.itemFindAll();
+    public List<Item> selectItem(){
+      return itemCustomerRepository.getItem();
     }
 }

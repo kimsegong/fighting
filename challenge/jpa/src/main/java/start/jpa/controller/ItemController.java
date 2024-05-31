@@ -1,17 +1,14 @@
 package start.jpa.controller;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import start.jpa.entity.Item;
-import start.jpa.entity.Member;
 import start.jpa.service.ItemServiceImpl;
-import start.jpa.service.MemberServiceImpl;
+
+import java.util.List;
 
 @RequestMapping("/item")
 @RequiredArgsConstructor
@@ -26,8 +23,9 @@ public class ItemController {
     }
 
     @GetMapping("/itemList")
-    public String selectAllItem(){
-        itemService.selectItem();
+    public String selectAllItem(Model model){
+        List<Item> items = itemService.selectItem();
+        model.addAttribute("items", items);
         return "item/itemList";
     }
 

@@ -11,19 +11,19 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
-@Table(name = "item")
+@Table
 public class Item {
 
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ITEM_ID")
     private Long id;
-    @Column(name = "ITAM_NAME")
+    @Column(name = "ITEM_NAME")
     private String name;
-    @Column(name = "ITAM_ACOUNT")
+    @Column(name = "ITEM_ACOUNT")
     private int amount;
-    @Column(name = "ITAM_PRICE")
+    @Column(name = "ITEM_PRICE")
     private int price;
-    @Column(name = "ITAM_STATUS")
+    @Column(name = "ITEM_STATUS")
     private int status; // 상품상태
 
 }
