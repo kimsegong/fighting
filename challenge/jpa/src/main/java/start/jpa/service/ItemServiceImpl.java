@@ -20,4 +20,9 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> selectItem(){
       return itemCustomerRepository.getItem();
     }
+
+  @Override
+  public Item modifyItem() {
+    return null;
+  }
 }
