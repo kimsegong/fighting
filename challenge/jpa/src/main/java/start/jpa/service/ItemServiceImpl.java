@@ -23,6 +23,6 @@ public class ItemServiceImpl implements ItemService {
 
   @Override
   public Item modifyItem() {
-    return null;
+    return itemCustomerRepository.modifyItem();
   }
 }
