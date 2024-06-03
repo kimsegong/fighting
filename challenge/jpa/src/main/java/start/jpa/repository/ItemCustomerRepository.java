@@ -12,5 +12,5 @@ public interface ItemCustomerRepository {
   @Query("SELECT i FROM Item i")
   List<Item> getItem();
 
-  Item modifyItem();
+  Item modifyItem(Long id, String name);s
 }

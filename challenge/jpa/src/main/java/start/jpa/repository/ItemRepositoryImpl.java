@@ -10,7 +10,7 @@ import start.jpa.entity.QItem;
 import java.util.List;
 
 @RequiredArgsConstructor
-public class ItemRepositoryImpl implements ItemCustomerRepository{
+public class ItemRepositoryImpl implements ItemCustomerRepository {
 
   private final JPAQueryFactory jpaQueryFactory;
 
@@ -22,4 +22,23 @@ public class ItemRepositoryImpl implements ItemCustomerRepository{
            .fetch();
   }
 
+  @Override
+  public Item modifyItem(Long id, String name) {
+    QItem qItem = QItem.item;
+
+    long affectedRows = jpaQueryFactory
+           .update(qItem)
+           .where(qItem.id.eq(id))
+           .set(qItem.name, name)
+           .execute();
+
+    if (affectedRows > 0) {
+      return jpaQueryFactory
+             .selectFrom(qItem)
+             .where(qItem.id.eq(id))
+             .fetchOne();
+    } else {
+      throw new IllegalStateException("Item update failed.");
+    }
+  }
 }
