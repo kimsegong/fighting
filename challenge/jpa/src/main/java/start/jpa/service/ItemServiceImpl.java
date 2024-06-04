@@ -22,7 +22,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
   @Override
-  public Item modifyItem() {
-    return itemCustomerRepository.modifyItem();
+  public Item modifyItem(Long id, String name) {
+    return itemCustomerRepository.modifyItem(id, name);
   }
 }

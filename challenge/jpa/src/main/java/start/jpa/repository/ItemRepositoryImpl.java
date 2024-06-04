@@ -26,13 +26,13 @@ public class ItemRepositoryImpl implements ItemCustomerRepository {
   public Item modifyItem(Long id, String name) {
     QItem qItem = QItem.item;
 
-    long affectedRows = jpaQueryFactory
+    long updateRows = jpaQueryFactory
            .update(qItem)
            .where(qItem.id.eq(id))
            .set(qItem.name, name)
            .execute();
 
-    if (affectedRows > 0) {
+    if (updateRows > 0) {
       return jpaQueryFactory
              .selectFrom(qItem)
              .where(qItem.id.eq(id))
