@@ -6,11 +6,10 @@ import start.jpa.entity.Item;
 
 import java.util.List;
 
-@Repository
 public interface ItemCustomerRepository {
 
-  @Query("SELECT i FROM Item i")
-  List<Item> getItem();
 
-  Item modifyItem(Long id, String name);
+  List<Item> findAll();
+
+//  Item modifyItem(Long id, String name);
 }

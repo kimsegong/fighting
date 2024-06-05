@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableJpaRepositories("start.jpa.repository")
-public class JpaConfig {
+public class JpaQueryDslConfig {
 
   @PersistenceContext
   private EntityManager entityManager;
