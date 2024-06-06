@@ -10,6 +10,6 @@ public interface ItemCustomerRepository {
 
 
   List<Item> findAll();
-
-//  Item modifyItem(Long id, String name);
+  List<Item> findById(Long id);
+  //Item modifyItem(Long id, String name);
 }

@@ -24,6 +24,16 @@ public class ItemRepositoryImpl implements ItemCustomerRepository {
            .selectFrom(qItem)
            .fetch();
   }
+
+  @Override
+  public List<Item> findById(Long id) {
+    QItem qItem = QItem.item;
+    return jpaQueryFactory
+           .selectFrom(qItem)
+           .where(qItem.id.eq(id))
+           .fetch();
+  }
+
 //
 //  @Override
 //  public Item modifyItem(Long id, String name) {
