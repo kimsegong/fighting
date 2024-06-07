@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import start.jpa.entity.Item;
 import start.jpa.service.ItemServiceImpl;
@@ -29,9 +30,11 @@ public class ItemController {
         return "item/itemList";
     }
 
-//    @PostMapping("/modifyItem")
-//    public Item itemModify(){
-//        int modifyResult = itemService.
-//    }
+    // 수정하세요
+    @PostMapping("/modifyItem")
+    public Item itemModify(Long id, String name){
+        return  itemService.modifyItem(id, name);
+
+    }
 
 }

@@ -11,5 +11,6 @@ public interface ItemCustomerRepository {
 
   List<Item> findAll();
   List<Item> findById(Long id);
-  //Item modifyItem(Long id, String name);
+  @Query("UPDATE Item i SET i.name = :name, i.price = :price, i.amount = :amount, i.status = :status WHERE i.id = :id")
+  Item modifyItem(Long id, String name);
 }

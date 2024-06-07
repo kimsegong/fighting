@@ -34,24 +34,24 @@ public class ItemRepositoryImpl implements ItemCustomerRepository {
            .fetch();
   }
 
-//
-//  @Override
-//  public Item modifyItem(Long id, String name) {
-//    QItem qItem = QItem.item;
-//
-//    long updateRows = jpaQueryFactory
-//           .update(qItem)
-//           .where(qItem.id.eq(id))
-//           .set(qItem.name, name)
-//           .execute();
-//
-//    if (updateRows > 0) {
-//      return jpaQueryFactory
-//             .selectFrom(qItem)
-//             .where(qItem.id.eq(id))
-//             .fetchOne();
-//    } else {
-//      throw new IllegalStateException("Item update failed.");
-//    }
-//  }
+
+  @Override
+  public Item modifyItem(Long id, String name) {
+    QItem qItem = QItem.item;
+
+    long updateRows = jpaQueryFactory
+           .update(qItem)
+           .where(qItem.id.eq(id))
+           .set(qItem.name, name)
+           .execute();
+
+    if (updateRows > 0) {
+      return jpaQueryFactory
+             .selectFrom(qItem)
+             .where(qItem.id.eq(id))
+             .fetchOne();
+    } else {
+      throw new IllegalStateException("Item update failed.");
+    }
+  }
 }
