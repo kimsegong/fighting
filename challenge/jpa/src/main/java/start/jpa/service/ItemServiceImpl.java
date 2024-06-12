@@ -23,4 +23,9 @@ public class ItemServiceImpl implements ItemService {
   public Item modifyItem(Long id, String name) {
     return itemCustomerRepository.modifyItem(id, name);
   }
+
+  @Override
+  public int deleteItem() {
+    return 0;
+  }
 }
