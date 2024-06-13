@@ -54,4 +54,9 @@ public class ItemRepositoryImpl implements ItemCustomerRepository {
       throw new IllegalStateException("Item update failed.");
     }
   }
+
+  @Override
+  public int deleteItem(Long id) {
+    return 0;
+  }
 }
