@@ -30,11 +30,11 @@ public class ItemController {
         return "item/itemList";
     }
 
-    // 수정하세요
-    @PostMapping("/modifyItem")
-    public Item itemModify(Long id, String name){
-        return  itemService.modifyItem(id, name);
-
-    }
+//    // 수정하세요
+//    @PostMapping("/modifyItem")
+//    public Item itemModify(Long id, String name){
+//        return  itemService.modifyItem(id, name);
+//
+//    }
 
 }

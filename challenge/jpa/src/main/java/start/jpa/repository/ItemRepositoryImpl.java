@@ -25,38 +25,38 @@ public class ItemRepositoryImpl implements ItemCustomerRepository {
            .fetch();
   }
 
-  @Override
-  public List<Item> findById(Long id) {
-    QItem qItem = QItem.item;
-    return jpaQueryFactory
-           .selectFrom(qItem)
-           .where(qItem.id.eq(id))
-           .fetch();
-  }
+//  @Override
+//  public List<Item> findById(Long id) {
+//    QItem qItem = QItem.item;
+//    return jpaQueryFactory
+//           .selectFrom(qItem)
+//           .where(qItem.id.eq(id))
+//           .fetch();
+//  }
+//
+//
+//  @Override
+//  public Item modifyItem(Long id, String name) {
+//    QItem qItem = QItem.item;
+//
+//    long updateRows = jpaQueryFactory
+//           .update(qItem)
+//           .where(qItem.id.eq(id))
+//           .set(qItem.name, name)
+//           .execute();
+//
+//    if (updateRows > 0) {
+//      return jpaQueryFactory
+//             .selectFrom(qItem)
+//             .where(qItem.id.eq(id))
+//             .fetchOne();
+//    } else {
+//      throw new IllegalStateException("Item update failed.");
+//    }
+//  }
 
-
-  @Override
-  public Item modifyItem(Long id, String name) {
-    QItem qItem = QItem.item;
-
-    long updateRows = jpaQueryFactory
-           .update(qItem)
-           .where(qItem.id.eq(id))
-           .set(qItem.name, name)
-           .execute();
-
-    if (updateRows > 0) {
-      return jpaQueryFactory
-             .selectFrom(qItem)
-             .where(qItem.id.eq(id))
-             .fetchOne();
-    } else {
-      throw new IllegalStateException("Item update failed.");
-    }
-  }
-
-  @Override
-  public int deleteItem(Long id) {
-    return 0;
-  }
+//  @Override
+//  public int deleteItem(Long id) {
+//    return 0;
+//  }
 }

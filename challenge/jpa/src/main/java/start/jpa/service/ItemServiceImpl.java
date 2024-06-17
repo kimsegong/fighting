@@ -19,13 +19,13 @@ public class ItemServiceImpl implements ItemService {
       return itemCustomerRepository.findAll();
     }
 
-  @Override
-  public Item modifyItem(Long id, String name) {
-    return itemCustomerRepository.modifyItem(id, name);
-  }
-
-  @Override
-  public int deleteItem(Long id) {
-    return itemCustomerRepository.deleteItem(id);
-  }
+//  @Override
+//  public Item modifyItem(Long id, String name) {
+//    return itemCustomerRepository.modifyItem(id, name);
+//  }
+//
+//  @Override
+//  public int deleteItem(Long id) {
+//    return itemCustomerRepository.deleteItem(id);
+//  }
 }
